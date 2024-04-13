@@ -225,7 +225,7 @@ export class AIHorde {
     ratings: AIHordeRatings
     constructor(options?: AIHordeInitOptions) {
         this.#default_token = options?.default_token
-        this.#api_route = options?.api_route ?? "https://aihorde.net/api/v2"
+        this.#api_route = options?.api_route ?? "https://api.aipowergrid.io/api/v2"
         this.#cache_config = {
             users: options?.cache?.users ?? 0,
             generations_check: options?.cache?.generations_check ?? 0,
@@ -271,7 +271,7 @@ export class AIHorde {
                 
 
         this.ratings = new AIHordeRatings({
-            api_route: options?.ratings_api_route ?? "https://ratings.aihorde.net/api/v1",
+            api_route: options?.ratings_api_route ?? "https://api.aipowergrid.io/api/v1",
             default_token: options?.default_token,
             client_agent: this.#client_agent
         })
@@ -1530,7 +1530,7 @@ export interface ModifyWorkerInput {
 /* API TYPES */
 
 /**
- * @link https://aihorde.net/api/ 
+ * @link https://api.aipowergrid.io/api/ 
 */
 
 export interface GenerationInputKobold {
@@ -2975,7 +2975,7 @@ export class AIHordeRatings {
     #client_agent: string
     constructor(options: AIHordeRatingsInitOptions) {
         this.#default_token = options.default_token
-        this.#api_route = options.api_route ?? "https://ratings.aihorde.net/api/v1"
+        this.#api_route = options.api_route ?? "https://api.aipowergrid.io/api/v1"
         this.#client_agent = options.client_agent
     }
 
